@@ -4,9 +4,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-/**
- * Created by Jagpreet on 11/04/16.
- */
 public class RectangleTest {
 
   private Rectangle rectangle;
@@ -17,14 +14,16 @@ public class RectangleTest {
 
   @Before
   public void setUp() {
-    length =  3;
+    length = 3;
     breadth = 2;
+
     RectangleBuilder builder = RectangleBuilder.getInstance();
-    builder.addLength(length);
-    builder.addBreadth(breadth);
+    builder.setLength(length);
+    builder.setBreadth(breadth);
     rectangle = builder.buildRectangle();
+
     builder = RectangleBuilder.getInstance();
-    builder.addLength(length);
+    builder.setLength(length);
     square = builder.buildSquare();
   }
 
@@ -49,8 +48,8 @@ public class RectangleTest {
     int length = 5;
     int breadth = 10;
     RectangleBuilder builder = RectangleBuilder.getInstance();
-    builder.addLength(length);
-    builder.addBreadth(breadth);
+    builder.setLength(length);
+    builder.setBreadth(breadth);
     Rectangle rect = builder.buildRectangle();
 
     int areaOfFirstRectangle = rectangle.getArea();
@@ -64,7 +63,7 @@ public class RectangleTest {
     int length = 5;
 
     RectangleBuilder builder = RectangleBuilder.getInstance();
-    builder.addLength(length);
+    builder.setLength(length);
     Rectangle sq = builder.buildSquare();
 
     int areaOfFirstSquare = square.getArea();
@@ -77,7 +76,7 @@ public class RectangleTest {
   @Test
   public void testRectanglePerimeterIsCorrect() throws Exception {
 
-    int expectedPerimeter  = 2 * (length + breadth);
+    int expectedPerimeter = 2 * (length + breadth);
     int actualPerimeter = rectangle.getPerimeter();
 
     Assert.assertEquals(actualPerimeter, expectedPerimeter);
@@ -86,7 +85,7 @@ public class RectangleTest {
   @Test
   public void testSquarePerimeterIsCorrect() throws Exception {
 
-    int expectedPerimeter  = 4 * length;
+    int expectedPerimeter = 4 * length;
     int actualPerimeter = square.getPerimeter();
 
     Assert.assertEquals(actualPerimeter, expectedPerimeter);
@@ -98,8 +97,8 @@ public class RectangleTest {
     int breadth = 10;
 
     RectangleBuilder builder = RectangleBuilder.getInstance();
-    builder.addLength(length);
-    builder.addBreadth(breadth);
+    builder.setLength(length);
+    builder.setBreadth(breadth);
     Rectangle rect = builder.buildRectangle();
 
     int perimeterOfFirstRectangle = rectangle.getPerimeter();
@@ -113,7 +112,7 @@ public class RectangleTest {
     int length = 5;
 
     RectangleBuilder builder = RectangleBuilder.getInstance();
-    builder.addLength(length);
+    builder.setLength(length);
     Rectangle sq = builder.buildSquare();
 
     int perimeterOfFirstSquare = square.getPerimeter();
@@ -127,8 +126,8 @@ public class RectangleTest {
     int length = 5;
     int breadth = 5;
     RectangleBuilder builder = RectangleBuilder.getInstance();
-    builder.addLength(length);
-    builder.addBreadth(breadth);
+    builder.setLength(length);
+    builder.setBreadth(breadth);
     Rectangle rectangle = builder.buildRectangle();
     Rectangle square = builder.buildSquare();
 
@@ -149,8 +148,8 @@ public class RectangleTest {
     int breadth = 3;
 
     RectangleBuilder builder = RectangleBuilder.getInstance();
-    builder.addLength(length);
-    builder.addBreadth(breadth);
+    builder.setLength(length);
+    builder.setBreadth(breadth);
     Rectangle rectangle1 = builder.buildRectangle();
 
     boolean areEqual = rectangle.equals(rectangle1);

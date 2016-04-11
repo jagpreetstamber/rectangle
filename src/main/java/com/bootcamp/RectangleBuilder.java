@@ -1,24 +1,23 @@
 package com.bootcamp;
 
-/**
- * Created by Jagpreet on 11/04/16.
- */
+
 public class RectangleBuilder {
 
   private int length;
   private int breadth;
 
-  private RectangleBuilder() {}
+  private RectangleBuilder() {
+  }
 
   public static RectangleBuilder getInstance() {
     return new RectangleBuilder();
   }
 
-  public void addLength(int length) {
-    this.length =length;
+  public void setLength(int length) {
+    this.length = length;
   }
 
-  public void addBreadth(int breadth) {
+  public void setBreadth(int breadth) {
     this.breadth = breadth;
   }
 

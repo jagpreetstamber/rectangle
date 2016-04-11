@@ -33,7 +33,7 @@ public class Rectangle {
   @Override
   public boolean equals(Object obj) {
     boolean isEqual;
-    if(obj instanceof Rectangle) {
+    if (obj instanceof Rectangle) {
       isEqual = (length == ((Rectangle) obj).length) && (breadth == ((Rectangle) obj).breadth);
     } else {
       isEqual = false;
