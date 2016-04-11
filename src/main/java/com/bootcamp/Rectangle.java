@@ -1,9 +1,5 @@
 package com.bootcamp;
 
-
-/**
- * Created by Jagpreet on 11/04/16.
- */
 public class Rectangle {
 
   private int length;
