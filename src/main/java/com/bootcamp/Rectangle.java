@@ -9,7 +9,7 @@ public class Rectangle {
   private int length;
   private int breadth;
 
-  private Rectangle(int length, int breadth) {
+  public Rectangle(int length, int breadth) {
     this.breadth = breadth;
     this.length = length;
   }
@@ -20,14 +20,6 @@ public class Rectangle {
 
   public int getPerimeter() {
     return 2 * (length + breadth);
-  }
-
-  public static Rectangle createSquare(int side) {
-    return new Rectangle(side, side);
-  }
-
-  public static Rectangle createRectangle(int length, int breadth) {
-    return new Rectangle(length, breadth);
   }
 
   @Override

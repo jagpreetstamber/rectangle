@@ -1,5 +1,7 @@
 package com.bootcamp;
 
+import com.bootcamp.builder.RectangleBuilder;
+import com.bootcamp.builder.SquareBuilder;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -17,14 +19,8 @@ public class RectangleTest {
     length = 3;
     breadth = 2;
 
-    RectangleBuilder builder = RectangleBuilder.getInstance();
-    builder.setLength(length);
-    builder.setBreadth(breadth);
-    rectangle = builder.buildRectangle();
-
-    builder = RectangleBuilder.getInstance();
-    builder.setLength(length);
-    square = builder.buildSquare();
+    rectangle = new RectangleBuilder().setLength(length).setBreadth(breadth).build();
+    square = new SquareBuilder().setSide(length).build();
   }
 
   @Test
@@ -47,10 +43,7 @@ public class RectangleTest {
   public void testRectangleAreaIsInCorrect() throws Exception {
     int length = 5;
     int breadth = 10;
-    RectangleBuilder builder = RectangleBuilder.getInstance();
-    builder.setLength(length);
-    builder.setBreadth(breadth);
-    Rectangle rect = builder.buildRectangle();
+    Rectangle rect = new RectangleBuilder().setLength(length).setBreadth(breadth).build();
 
     int areaOfFirstRectangle = rectangle.getArea();
     int areaOfSecondRectangle = rect.getArea();
@@ -62,9 +55,7 @@ public class RectangleTest {
   public void testSquareAreaIsInCorrect() throws Exception {
     int length = 5;
 
-    RectangleBuilder builder = RectangleBuilder.getInstance();
-    builder.setLength(length);
-    Rectangle sq = builder.buildSquare();
+    Rectangle sq = new SquareBuilder().setSide(length).build();
 
     int areaOfFirstSquare = square.getArea();
     int areaOfSecondSquare = sq.getArea();
@@ -96,10 +87,7 @@ public class RectangleTest {
     int length = 5;
     int breadth = 10;
 
-    RectangleBuilder builder = RectangleBuilder.getInstance();
-    builder.setLength(length);
-    builder.setBreadth(breadth);
-    Rectangle rect = builder.buildRectangle();
+    Rectangle rect = new RectangleBuilder().setLength(length).setBreadth(breadth).build();
 
     int perimeterOfFirstRectangle = rectangle.getPerimeter();
     int perimeterOfSecondRectangle = rect.getPerimeter();
@@ -110,10 +98,7 @@ public class RectangleTest {
   @Test
   public void testSquarePerimeterIsInCorrect() throws Exception {
     int length = 5;
-
-    RectangleBuilder builder = RectangleBuilder.getInstance();
-    builder.setLength(length);
-    Rectangle sq = builder.buildSquare();
+    Rectangle sq = new SquareBuilder().setSide(length).build();
 
     int perimeterOfFirstSquare = square.getPerimeter();
     int perimeterOfSecondSquare = sq.getPerimeter();
@@ -125,11 +110,8 @@ public class RectangleTest {
   public void testIfRectangleWithSameLengthAndBreadthIsASquareWithSameLengthAreEqual() throws Exception {
     int length = 5;
     int breadth = 5;
-    RectangleBuilder builder = RectangleBuilder.getInstance();
-    builder.setLength(length);
-    builder.setBreadth(breadth);
-    Rectangle rectangle = builder.buildRectangle();
-    Rectangle square = builder.buildSquare();
+    Rectangle rectangle = new RectangleBuilder().setLength(length).setBreadth(breadth).build();
+    Rectangle square = new SquareBuilder().setSide(length).build();
 
     int squareArea = square.getArea();
     int rectangleArea = rectangle.getArea();
@@ -147,10 +129,7 @@ public class RectangleTest {
     int length = 2;
     int breadth = 3;
 
-    RectangleBuilder builder = RectangleBuilder.getInstance();
-    builder.setLength(length);
-    builder.setBreadth(breadth);
-    Rectangle rectangle1 = builder.buildRectangle();
+    Rectangle rectangle1 = new RectangleBuilder().setBreadth(breadth).setLength(length).build();
 
     boolean areEqual = rectangle.equals(rectangle1);
 
