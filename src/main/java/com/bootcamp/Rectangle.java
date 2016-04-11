@@ -1,4 +1,4 @@
-package com.bootcamp.shapes;
+package com.bootcamp;
 
 
 /**

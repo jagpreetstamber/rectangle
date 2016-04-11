@@ -1,7 +1,5 @@
 package com.bootcamp;
 
-import com.bootcamp.shapes.Rectangle;
-
 /**
  * Created by Jagpreet on 11/04/16.
  */
